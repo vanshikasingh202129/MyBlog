@@ -1,0 +1,34 @@
+{% extends "base.html " %}
+{% load static %}
+{% block title %}MyBlog{% endblock  %}
+{% block stylecss %}
+<link rel="stylesheet" href="{% static "appBlog/index.css" %}">
+<link rel="stylesheet" href="{% static "appBlog/post.css" %}">
+{% endblock  %}
+{% block content %}
+
+
+<section id="Welcome">
+    <header>
+        <img src="{% static "appBlog/images/image.jpg" %}", alt="Vanshika = The author of this Blog"/>
+        <h2>VANSHIKA'S BLOG</h2>
+    </header>
+    <p>Hey! I will blog my life poetically</p>
+</section>
+
+<section id="Latest-posts">
+    <h2>My thoughts</h2>
+
+    <ul>
+        {% for post in posts %}
+        {% include "appBlog/includes/post.html" %}
+        {% endfor %}
+    </ul>
+</section>
+
+<section id="about">
+    <h2>What I Do</h2>
+    <p>I love living the life until I die</p>
+    <p>Do read my blogs to hate me with me!</p>
+</section>
+{% endblock  %}
